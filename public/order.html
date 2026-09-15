@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Order — Avaia By Monii</title><link rel="stylesheet" href="/styles.css"></head>
+<body><main class="page"><div class="container" style="max-width:700px"><div class="notice" id="status"></div><h1>Thank you.</h1><p class="muted">Keep your order number for tracking.</p><div class="panel" id="info"></div><a class="btn" href="/shop.html">Back to shop</a></div></main>
+<script>
+const q=new URLSearchParams(location.search),s=q.get("status"),o=q.get("order");document.getElementById("status").textContent=s==="paid"?"Payment received — your order is now being processed.":s==="demo"?"Order created. This store is currently in demo payment mode.":"We could not confirm the payment yet.";
+if(o)fetch("/api/orders/track?order="+encodeURIComponent(o)+"&email="+encodeURIComponent("")).catch(()=>{});
+document.getElementById("info").innerHTML=o?`<strong>Order number: ${o}</strong><p>You can track your order from the Track Order page using your order number and checkout email.</p>`:"Please contact Avaia By Monii if you need help.";
+</script></body></html>
