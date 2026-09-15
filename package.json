@@ -1,0 +1,26 @@
+{
+  "name": "avaia-by-monii-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack ecommerce store and private profit dashboard for Avaia By Monii / Strands by Monii.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node bootstrap.js && node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node seed.js"
+  },
+  "engines": {
+    "node": ">=22 <23"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.10.0",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.1",
+    "express-session": "^1.18.2",
+    "helmet": "^8.1.0",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^7.0.6"
+  }
+}
